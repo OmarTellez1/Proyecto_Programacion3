@@ -1,0 +1,137 @@
+.nav-link,
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
+  font-weight: 700;
+  transition:
+    border-color 180ms var(--ease),
+    background-color 180ms var(--ease),
+    color 180ms var(--ease),
+    transform 180ms var(--ease);
+}
+
+.nav-link:hover,
+.cart-link:hover,
+.button:hover,
+.remove-button:hover,
+.quantity-button:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link.is-active,
+.cart-link,
+.cart-link.is-active {
+  color: var(--text);
+}
+
+.nav-link.is-active,
+.nav-link:hover,
+.cart-link:hover,
+.cart-link.is-active {
+  border-color: rgba(255, 122, 69, 0.36);
+  background: var(--accent-soft);
+}
+
+.cart-link {
+  gap: 0.65rem;
+}
+
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8rem;
+  height: 1.8rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-actions,
+.product-actions,
+.quantity-row,
+.success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.button,
+.remove-button,
+.quantity-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition:
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease),
+    color 180ms var(--ease),
+    transform 180ms var(--ease);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button-secondary,
+.remove-button,
+.quantity-button {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.button-secondary:hover,
+.remove-button:hover,
+.quantity-button:hover {
+  border-color: rgba(255, 122, 69, 0.36);
+  background: var(--accent-soft);
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.quantity-button {
+  min-width: 2.8rem;
+  min-height: 2.8rem;
+  border: 0;
+}
+
+.quantity-input {
+  width: 4rem;
+  min-height: 2.8rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: center;
+}
+
+.status-text {
+  min-height: 1.4rem;
+  color: var(--success);
+  font-weight: 700;
+}

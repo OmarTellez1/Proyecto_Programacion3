@@ -1,0 +1,79 @@
+.brand {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.brand-kicker,
+.eyebrow,
+.product-category,
+.function-index,
+.history-meta-label {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-name,
+.hero-title,
+.section-title,
+.page-title,
+.panel-title,
+.summary-card h2,
+.product-sidebar h1,
+.success-panel h2,
+.empty-state h2,
+.function-card h3,
+.product-card h3,
+.history-order-copy h2,
+.history-item-copy h3,
+.cart-item-body h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.brand-name {
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.hero-text,
+.page-lead,
+.section-heading p,
+.function-card p,
+.product-copy p,
+.product-description,
+.summary-card p,
+.empty-state p,
+.product-meta,
+.result-note,
+.price-note,
+.history-note,
+.history-item-qty,
+.field-error {
+  margin: 0;
+  color: var(--muted);
+}
+
+.page-title,
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  max-width: 10ch;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-meta-value {
+  font-weight: 700;
+}

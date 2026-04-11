@@ -1,0 +1,90 @@
+.site-header,
+.site-footer,
+.page-main {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 0 var(--space-4);
+}
+
+.section + .section {
+  margin-top: var(--space-6);
+}
+
+.section-frame {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 0 0 var(--space-5);
+}
+
+.header-shell {
+  width: 100%;
+  margin: 0;
+  padding: 1rem clamp(1rem, 3vw, 2.75rem);
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid rgba(22, 28, 36, 0.08);
+  border-left: 0;
+  border-radius: 0;
+  background: rgba(255, 252, 247, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 28px rgba(121, 95, 63, 0.08);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.section-heading,
+.page-heading {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: var(--space-4);
+  max-width: 42rem;
+}
+
+.page-main {
+  padding: var(--space-5) 0 var(--space-7);
+}
+
+.site-footer {
+  padding: var(--space-6) 0 0;
+}
+
+.footer-panel {
+  width: 100%;
+  margin: 0;
+  padding: 1.2rem clamp(1rem, 3vw, 2.75rem);
+  border-top: 1px solid rgba(22, 28, 36, 0.08);
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: #161c24;
+  color: #f6f1e8;
+  box-shadow: none;
+}
+
+.footer-signature {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  letter-spacing: 0.02em;
+  text-align: center;
+}

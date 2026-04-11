@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Confirma tu pedido en OmarTech Market con un formulario simple y claro.">
+  <meta name="theme-color" content="#f6f1e8">
+  <title>Confirmar pedido | OmarTech Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page page-checkout" data-page="checkout" data-root="..">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main-content" class="page-main">
+    <section class="section">
+      <div class="section-frame">
+        <div class="page-heading">
+          <p class="eyebrow">Confirmar pedido</p>
+          <h1 class="page-title">Compra</h1>
+          <p class="page-lead">Completa tus datos para registrar el pedido.</p>
+        </div>
+
+        <div class="checkout-layout">
+          <div class="checkout-main">
+            <form id="checkout-form" class="checkout-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="full-name">Nombre completo</label>
+                  <input id="full-name" name="fullName" type="text" autocomplete="name" required>
+                  <p class="field-error" data-error-for="full-name"></p>
+                </div>
+                <div class="field">
+                  <label for="email">Correo electrónico</label>
+                  <input id="email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+                  <p class="field-error" data-error-for="email"></p>
+                </div>
+                <div class="field">
+                  <label for="phone">Teléfono</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+                  <p class="field-error" data-error-for="phone"></p>
+                </div>
+                <div class="field">
+                  <label for="city">Ciudad</label>
+                  <input id="city" name="city" type="text" autocomplete="address-level2" required>
+                  <p class="field-error" data-error-for="city"></p>
+                </div>
+                <div class="field field-span-2">
+                  <label for="address">Dirección de entrega</label>
+                  <input id="address" name="address" type="text" autocomplete="street-address" required>
+                  <p class="field-error" data-error-for="address"></p>
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Registrar pedido</button>
+            </form>
+
+            <div id="checkout-empty" class="empty-state is-hidden">
+              <h2>No hay productos para comprar</h2>
+              <p>Agrega artículos al carrito antes de continuar.</p>
+              <a class="button button-primary" href="./catalog.html">Explorar catálogo</a>
+            </div>
+
+            <div id="checkout-success" class="success-panel is-hidden" role="status" aria-live="polite"></div>
+          </div>
+
+          <aside id="checkout-summary" class="summary-card"></aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script type="module" src="../javascript/app.js"></script>
+</body>
+</html>

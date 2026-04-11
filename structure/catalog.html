@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de OmarTech Market con búsqueda y filtro por categoría.">
+  <meta name="theme-color" content="#f6f1e8">
+  <title>Catálogo | OmarTech Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page page-catalog" data-page="catalog" data-root="..">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main-content" class="page-main">
+    <section class="section">
+      <div class="section-frame">
+        <div class="page-heading">
+          <p class="eyebrow">Explorar productos</p>
+          <h1 class="page-title">Catálogo</h1>
+          <p class="page-lead">Encuentra laptops, teclados, mouses, audífonos y monitores en un catálogo directo y fácil de recorrer.</p>
+        </div>
+
+        <div class="filter-bar" aria-label="Filtros del catálogo">
+          <div class="field">
+            <label for="catalog-search">Buscar</label>
+            <input id="catalog-search" name="catalog-search" type="search" placeholder="Ej: monitor, teclado, laptop" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="catalog-category">Categoría</label>
+            <select id="catalog-category" name="catalog-category">
+              <option value="all">Todas</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="catalog-result-note" class="result-note" aria-live="polite"></p>
+        <div id="catalog-grid" class="product-grid"></div>
+
+        <div id="catalog-empty" class="empty-state is-hidden">
+          <h2>Sin resultados</h2>
+          <p>No encontramos productos con ese criterio.</p>
+          <button id="catalog-reset" class="button button-secondary" type="button">Limpiar filtros</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script type="module" src="../javascript/app.js"></script>
+</body>
+</html>

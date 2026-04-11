@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Historial de compras de OmarTech Market guardado en el navegador actual.">
+  <meta name="theme-color" content="#f6f1e8">
+  <title>Historial | OmarTech Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page page-history" data-page="history" data-root="..">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main-content" class="page-main">
+    <section class="section">
+      <div class="section-frame">
+        <div class="page-heading">
+          <p class="eyebrow">Post compra</p>
+          <h1 class="page-title">Historial</h1>
+          <p class="page-lead">Aquí puedes revisar los productos comprados en este navegador. Si el localStorage se limpia, este historial también desaparece.</p>
+        </div>
+
+        <div class="history-layout">
+          <div class="history-main">
+            <div id="history-orders" class="history-orders"></div>
+            <div id="history-empty" class="empty-state is-hidden">
+              <h2>Aún no hay compras registradas</h2>
+              <p>Completa un pedido para que tus productos aparezcan aquí.</p>
+              <a class="button button-primary" href="./catalog.html">Ir al catálogo</a>
+            </div>
+          </div>
+
+          <aside id="history-summary" class="summary-card"></aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script type="module" src="../javascript/app.js"></script>
+</body>
+</html>
