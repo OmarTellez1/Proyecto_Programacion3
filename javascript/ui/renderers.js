@@ -3,25 +3,30 @@ import { formatOrderDate, formatPrice } from "../core/formatters.js";
 import { getProductById } from "../services/product-service.js";
 
 export function renderProductCard(product, pageUrl) {
+  const detailUrl = pageUrl("product", { id: product.id });
+
   return `
     <article class="product-card">
-      <a class="product-media" href="${pageUrl("product", { id: product.id })}">
+      <a class="catalog-card-link" href="${detailUrl}" aria-label="Ver detalle de ${product.name}">
         <img src="${product.image}" alt="${product.alt}" width="720" height="540" loading="lazy" decoding="async">
       </a>
       <div class="product-body">
-        <div class="product-copy">
-          <span class="product-category">${categoryLabels[product.category]}</span>
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
+        <a class="catalog-copy-link" href="${detailUrl}">
+          <div class="product-copy">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+          </div>
+        </a>
+        <div class="catalog-card-purchase">
+          <div class="catalog-card-price">
+            <span class="product-category">Precio</span>
+            <span class="price">${formatPrice(product.price)}</span>
+          </div>
+          <div class="product-actions">
+            <button class="button button-primary" type="button" data-quick-add="${product.id}">Buy</button>
+          </div>
         </div>
-        <div class="price-row">
-          <span class="price">${formatPrice(product.price)}</span>
-          <span class="price-note">${product.specs[0]}</span>
-        </div>
-        <div class="product-actions">
-          <a class="button button-secondary" href="${pageUrl("product", { id: product.id })}">Ver detalle</a>
-          <button class="button button-primary" type="button" data-quick-add="${product.id}">Agregar</button>
-        </div>
+        <p class="status-text catalog-card-status" data-card-status="${product.id}" aria-live="polite"></p>
       </div>
     </article>
   `;
@@ -154,7 +159,7 @@ export function renderHistorySummary(metrics, hasOrders, pageUrl) {
       <span>Última compra</span>
       <strong>${metrics.lastOrderDate}</strong>
     </div>
-    <p class="history-note">${hasOrders ? "El historial se guarda solo en el navegador actual y depende del localStorage disponible." : "Todavía no hay compras guardadas en el navegador actual."}</p>
+    ${hasOrders ? "" : `<p class="history-note">Todavía no hay compras guardadas en el navegador actual.</p>`}
     <a class="button ${hasOrders ? "button-secondary" : "button-primary"}" href="${pageUrl("catalog")}">Ir al catálogo</a>
   `;
 }

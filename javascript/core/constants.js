@@ -8,11 +8,3 @@ export const categoryLabels = {
   headphones: "Audífonos",
   monitors: "Monitores"
 };
-
-export const categoryThemes = {
-  laptops: ["#ff7a45", "#ffb078"],
-  keyboards: ["#f98a57", "#ffd97a"],
-  mice: ["#8ee3bd", "#6dd7c1"],
-  headphones: ["#7ebfff", "#9aa6ff"],
-  monitors: ["#ff7a45", "#9fe0b1"]
-};

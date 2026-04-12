@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Catálogo de OmarTech Market con búsqueda y filtro por categoría.">
+  <meta name="description" content="Catálogo de OmarTech Market organizado por categorías de productos tecnológicos.">
   <meta name="theme-color" content="#f6f1e8">
   <title>Catálogo | OmarTech Market</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,30 +21,9 @@
         <div class="page-heading">
           <p class="eyebrow">Explorar productos</p>
           <h1 class="page-title">Catálogo</h1>
-          <p class="page-lead">Encuentra laptops, teclados, mouses, audífonos y monitores en un catálogo directo y fácil de recorrer.</p>
+          <p class="page-lead">Explora laptops, teclados, mouses y audífonos en un catálogo ordenado por categorías y con tarjetas más directas de recorrer.</p>
         </div>
-
-        <div class="filter-bar" aria-label="Filtros del catálogo">
-          <div class="field">
-            <label for="catalog-search">Buscar</label>
-            <input id="catalog-search" name="catalog-search" type="search" placeholder="Ej: monitor, teclado, laptop" autocomplete="off">
-          </div>
-          <div class="field">
-            <label for="catalog-category">Categoría</label>
-            <select id="catalog-category" name="catalog-category">
-              <option value="all">Todas</option>
-            </select>
-          </div>
-        </div>
-
-        <p id="catalog-result-note" class="result-note" aria-live="polite"></p>
-        <div id="catalog-grid" class="product-grid"></div>
-
-        <div id="catalog-empty" class="empty-state is-hidden">
-          <h2>Sin resultados</h2>
-          <p>No encontramos productos con ese criterio.</p>
-          <button id="catalog-reset" class="button button-secondary" type="button">Limpiar filtros</button>
-        </div>
+        <div id="catalog-groups" class="catalog-groups" aria-live="polite"></div>
       </div>
     </section>
   </main>
