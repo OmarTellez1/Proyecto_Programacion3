@@ -1,9 +1,9 @@
-import { categoryLabels } from "../core/constants.js";
-import { formatOrderDate, formatPrice } from "../core/formatters.js";
-import { getProductById } from "../services/product-service.js";
+import { categoryLabels } from '../core/constants.js';
+import { formatOrderDate, formatPrice } from '../core/formatters.js';
+import { getProductById } from '../services/product-service.js';
 
 export function renderProductCard(product, pageUrl) {
-  const detailUrl = pageUrl("product", { id: product.id });
+  const detailUrl = pageUrl('product', { id: product.id });
 
   return `
     <article class="product-card">
@@ -23,7 +23,7 @@ export function renderProductCard(product, pageUrl) {
             <span class="price">${formatPrice(product.price)}</span>
           </div>
           <div class="product-actions">
-            <button class="button button-primary" type="button" data-quick-add="${product.id}">Buy</button>
+            <button class="button button-primary" type="button" data-quick-add="${product.id}">Comprar</button>
           </div>
         </div>
         <p class="status-text catalog-card-status" data-card-status="${product.id}" aria-live="polite"></p>
@@ -43,7 +43,7 @@ export function renderProductDetail(product) {
       <div class="product-gallery">
         <img src="${product.image}" alt="${product.alt}" width="720" height="540" loading="eager" decoding="async">
         <ul class="product-spec-list">
-          ${product.specs.map((spec) => `<li>${spec}</li>`).join("")}
+          ${product.specs.map((spec) => `<li>${spec}</li>`).join('')}
         </ul>
       </div>
       <div class="product-sidebar">
@@ -75,7 +75,7 @@ export function renderCartItem(item) {
         <div>
           <span class="product-category">${categoryLabels[item.category]}</span>
           <h2>${item.name}</h2>
-          <p class="product-meta">${item.specs.join(" · ")}</p>
+          <p class="product-meta">${item.specs.join(' · ')}</p>
         </div>
         <div class="cart-item-foot">
           <div class="quantity-row">
@@ -112,8 +112,8 @@ export function renderCartSummary(totals, hasItems, pageUrl) {
       <span>Total</span>
       <strong>${formatPrice(totals.total)}</strong>
     </div>
-    <p>${hasItems ? "Continúa con la compra cuando tu selección esté lista." : "Todavía no has agregado productos."}</p>
-    ${hasItems ? `<a class="button button-primary" href="${pageUrl("checkout")}">Continuar compra</a>` : `<a class="button button-secondary" href="${pageUrl("catalog")}">Ir al catálogo</a>`}
+    <p>${hasItems ? 'Continúa con la compra cuando tu selección esté lista.' : 'Todavía no has agregado productos.'}</p>
+    ${hasItems ? `<a class="button button-primary" href="${pageUrl('checkout')}">Continuar compra</a>` : `<a class="button button-secondary" href="${pageUrl('catalog')}">Ir al catálogo</a>`}
   `;
 }
 
@@ -136,7 +136,7 @@ export function renderCheckoutSummary(totals, hasItems) {
       <span>Total</span>
       <strong>${formatPrice(totals.total)}</strong>
     </div>
-    <p>${hasItems ? "Verifica tus datos y registra el pedido." : "No hay productos activos en el carrito."}</p>
+    <p>${hasItems ? 'Verifica tus datos y registra el pedido.' : 'No hay productos activos en el carrito.'}</p>
   `;
 }
 
@@ -159,8 +159,8 @@ export function renderHistorySummary(metrics, hasOrders, pageUrl) {
       <span>Última compra</span>
       <strong>${metrics.lastOrderDate}</strong>
     </div>
-    ${hasOrders ? "" : `<p class="history-note">Todavía no hay compras guardadas en el navegador actual.</p>`}
-    <a class="button ${hasOrders ? "button-secondary" : "button-primary"}" href="${pageUrl("catalog")}">Ir al catálogo</a>
+    ${hasOrders ? '' : `<p class="history-note">Todavía no hay compras guardadas en el navegador actual.</p>`}
+    <a class="button ${hasOrders ? 'button-secondary' : 'button-primary'}" href="${pageUrl('catalog')}">Ir al catálogo</a>
   `;
 }
 
@@ -171,7 +171,7 @@ export function renderHistoryOrder(order) {
         <div class="history-order-copy">
           <span class="product-category">Pedido ${order.code}</span>
           <h2>Compra registrada el ${formatOrderDate(order.createdAt)}</h2>
-          <p class="product-meta">${order.totals.itemsCount} producto${order.totals.itemsCount === 1 ? "" : "s"} comprados en esta orden.</p>
+          <p class="product-meta">${order.totals.itemsCount} producto${order.totals.itemsCount === 1 ? '' : 's'} comprados en esta orden.</p>
         </div>
         <span class="history-total">${formatPrice(order.totals.total)}</span>
       </div>
@@ -190,7 +190,7 @@ export function renderHistoryOrder(order) {
         </div>
       </div>
       <div class="history-item-list">
-        ${order.items.map((item) => renderHistoryItem(item)).join("")}
+        ${order.items.map((item) => renderHistoryItem(item)).join('')}
       </div>
     </article>
   `;
@@ -201,7 +201,7 @@ export function renderNotFoundState(pageUrl) {
     <div class="empty-state">
       <h2>Producto no encontrado</h2>
       <p>El producto solicitado no existe dentro del catálogo actual.</p>
-      <a class="button button-primary" href="${pageUrl("catalog")}">Volver al catálogo</a>
+      <a class="button button-primary" href="${pageUrl('catalog')}">Volver al catálogo</a>
     </div>
   `;
 }
@@ -210,8 +210,8 @@ function renderHistoryItem(item) {
   const product = getProductById(item.productId);
   const image = product ? product.image : createHistoryFallbackImage(item.name);
   const alt = product ? product.alt : `Imagen de ${item.name}`;
-  const specs = product ? product.specs.join(" · ") : "Producto registrado en el historial local.";
-  const categoryLabel = categoryLabels[item.category] || "Producto";
+  const specs = product ? product.specs.join(' · ') : 'Producto registrado en el historial local.';
+  const categoryLabel = categoryLabels[item.category] || 'Producto';
 
   return `
     <article class="history-item">
@@ -247,9 +247,9 @@ function createHistoryFallbackImage(name) {
 
 function escapeSvgText(text) {
   return String(text)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
